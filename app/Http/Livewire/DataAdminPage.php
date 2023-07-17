@@ -43,7 +43,7 @@ class DataAdminPage extends Component
         User::create([
             'nama' => $this->nama,
             'img' => $image,
-            'email' => $this->email,
+            'username' => $this->username,
             'password' => Hash::make($this->password),
             'role' => 'admin',
         ]);

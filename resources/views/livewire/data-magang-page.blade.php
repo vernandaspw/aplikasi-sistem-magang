@@ -1,5 +1,5 @@
 <div>
-    <div class="container-fluid pt-4 px-4" wire:poll>
+    <div class="container-fluid pt-4 px-4 d-print-none">
         @if ($terimaPengajuanPage)
             <div class="col-sm-12 col-xl-6">
                 <div class="bg-white shadow rounded h-100 p-4">
@@ -156,7 +156,13 @@
                         <div class="">
                             <h6 class="mb-4">Data Magang </h6>
                         </div>
+                        @if(auth()->user()->role == 'admin')
+                        <button onclick="window.print();" class="btn btn-info">
+                            Print
+                        </button>
+                        @endif
                     </div>
+
 
                     <div class="table-responsive">
                         <table class="table table-sm">
@@ -324,5 +330,69 @@
                 </div>
             </div>
         @endif
+    </div>
+
+    <div class="d-print-block d-none">
+        <div class="container-fluid mt-2">
+            <div class="kop d-flex align-items-center">
+                <div class="col-3">
+                    <img src="{{ asset('img/logo.png') }}" width="140" alt="">
+                </div>
+                <div class="col text-start">
+                    <div class="">
+                        <b>LAYANAN ADMINISTRASI MAGANG</b>
+                    </div>
+                    <div class="">
+                        <b>RRI PALEMBANG</b>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="">
+                <div class="mb-2">
+                    Total yang magang : {{ $laporan_data_magangs->count() }}
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                            <th>
+                                No.
+                            </th>
+                            <th>
+                                Siswa/Mahasiswa
+                            </th>
+                            <th>
+                                Pembimbing
+                            </th>
+                            <th>
+                                Penempatan
+                            </th>
+                            <th>
+                                Unit kerja
+                            </th>
+                        </thead>
+                        <tbody>
+                            @foreach ($laporan_data_magangs as $lpm)
+                            <tr>
+                                <td>
+                                    {{ $loop->iteration }}
+                                </td>
+                                <td>
+                                    {{ $lpm->peserta->nama }}
+                                </td>
+                                <td>
+                                    {{ $lpm->pembimbing->nama }}
+                                </td>
+                                <td>
+                                    {{ $lpm->posisi->nama }}
+                                </td>
+                                <td>
+                                    {{ $lpm->bagian->nama }}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+            </div>
+        </div>
     </div>
 </div>

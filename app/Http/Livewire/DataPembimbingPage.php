@@ -23,7 +23,7 @@ class DataPembimbingPage extends Component
 
     public $img;
     public $nama;
-    public $email;
+    public $username;
     public $password;
     public $no_hp;
     public $jk;
@@ -44,12 +44,12 @@ class DataPembimbingPage extends Component
         if ($this->img) {
             $image = $this->img->store('img');
         } else {
-            $image = $this->img->store('img');
+            $image = null;
         }
         $user = User::create([
             'nama' => $this->nama,
             'img' => $image,
-            'email' => $this->email,
+            'username' => $this->username,
             'password' => Hash::make($this->password),
             'role' => 'pembimbing',
         ]);

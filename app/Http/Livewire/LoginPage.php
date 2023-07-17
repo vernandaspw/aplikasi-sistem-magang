@@ -13,17 +13,17 @@ class LoginPage extends Component
         return view('livewire.login-page')->layout('app');
     }
 
-    public $email, $password;
+    public $username, $password;
 
     public function masuk()
     {
         $this->validate([
-            'email' => 'required',
+            'username' => 'required|alpha',
             'password' => 'required',
         ]);
 
         // cek akun
-        $akun = User::where('email', $this->email)->first();
+        $akun = User::where('username', $this->username)->first();
         if ($akun) {
             if (Hash::check($this->password, $akun->password)) {
                 if ($akun->isaktif) {
@@ -36,7 +36,7 @@ class LoginPage extends Component
                 $this->emit('error', ['pesan' => 'password yang anda masukan salah']);
             }
         } else {
-            $this->emit('error', ['pesan' => 'Email atau akun tidak ada']);
+            $this->emit('error', ['pesan' => 'username tidak ada']);
         }
     }
 }

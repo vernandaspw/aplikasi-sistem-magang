@@ -24,7 +24,7 @@ class PesertaDaftarPage extends Component
 
     public $img;
     public $nama;
-    public $email;
+    public $username;
     public $password;
     public $no_hp;
     public $jk;
@@ -49,7 +49,7 @@ class PesertaDaftarPage extends Component
         $user = User::create([
             'img' => $image,
             'nama' => $this->nama,
-            'email' => $this->email,
+            'username' => $this->username,
             'password' => Hash::make($this->password),
             'role' => 'peserta',
         ]);

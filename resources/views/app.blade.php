@@ -72,7 +72,7 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
-        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <aside id="layout-menu" class="layout-menu d-print-none menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="{{ url('/', []) }}" class="app-brand-link">
               <span class="app-brand-logo demo">
@@ -96,7 +96,7 @@
         <div class="layout-page">
           <!-- Navbar -->
           <nav
-            class="layout-navbar container-fluid bg-primary navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            class="layout-navbar d-print-none container-fluid bg-primary navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
           >
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">

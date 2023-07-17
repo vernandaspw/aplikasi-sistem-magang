@@ -18,21 +18,21 @@ class UserSeeder extends Seeder
           [
             'id' => 1,
             'nama' => 'jon admin',
-            'email' => 'admin@gmail.com',
+            'username' => 'admin',
             'password' => Hash::make('admin123'),
             'role' => 'admin'
           ],
           [
             'id' => 2,
             'nama' => 'Agus',
-            'email' => 'pembimbing@gmail.com',
+            'username' => 'pembimbing',
             'password' => Hash::make('pembimbing123'),
             'role' => 'pembimbing'
           ],
           [
             'id' => 3,
             'nama' => 'Arip',
-            'email' => 'peserta@gmail.com',
+            'username' => 'peserta',
             'password' => Hash::make('peserta123'),
             'role' => 'peserta'
           ],

@@ -30,9 +30,13 @@ class DataMagangPage extends Component
         $this->posisis = Posisi::latest()->get();
         $this->bagians = Bagian::latest()->get();
 
+        $this->laporan_data_magangs = DataMagang::where('status', 'magang')->get();
+
         return view('livewire.data-magang-page')->layout('app');
     }
     use WithFileUploads;
+
+    public $laporan_data_magangs;
 
     public $editPage = false;
 
@@ -189,7 +193,7 @@ class DataMagangPage extends Component
         $this->e_selesai_magang = $data->magang_selesai;
 
         $this->ubahDataMagangPage = true;
-    
+
     }
 
     public function ubahDataMagang()
@@ -201,7 +205,7 @@ class DataMagangPage extends Component
         }else{
 
             $data = DataMagang::where('id', $id)->first();
-    
+
             $data->update([
                 'pembimbing_id' => $this->e_pembimbing_id,
                 'posisi_id' => $this->e_posisi_id,
@@ -209,7 +213,7 @@ class DataMagangPage extends Component
                 'magang_mulai' => $this->e_mulai_magang,
                 'magang_selesai' => $this->e_selesai_magang,
             ]);
-    
+
             $this->ubahDataMagangPage = false;
             $this->emit('success', ['pesan' => 'Berhasil ubah data']);
         }

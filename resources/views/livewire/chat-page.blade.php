@@ -72,8 +72,8 @@
                         <div class="card-footer"></div>
                     </div>
                 </div>
-                <div class="col-md-9 col-xl-7 chat">
-                    <div class="card">
+                <div class="col-md-9 col-xl-7 chat ">
+                    <div class="card ">
                         <div class="card-header msg_head">
                             <div class="d-flex bd-highlight">
                                 @if ($data_magang_chat)

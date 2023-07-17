@@ -23,10 +23,10 @@
                                 <h3>Masuk</h3>
                             </div>
                             <div class="form-floating mb-3">
-                                <input wire:model='email' type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
-                                @error('email')
+                                <input wire:model='username' type="text" class="form-control" id="floatingInput"
+                                    placeholder="name">
+                                <label for="floatingInput">username</label>
+                                @error('username')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -60,6 +60,6 @@
 
 <style>
     body{
-        background-color: white 
+        background-color: white
     }
 </style>

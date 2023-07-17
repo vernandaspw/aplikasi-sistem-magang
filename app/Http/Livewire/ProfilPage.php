@@ -18,7 +18,7 @@ class ProfilPage extends Component
 
     use WithFileUploads;
 
-    public $img, $nama, $email, $no_hp, $jk, $alamat, $asal_instansi, $jurusan, $konsentrasi;
+    public $img, $nama, $username, $no_hp, $jk, $alamat, $asal_instansi, $jurusan, $konsentrasi;
 
     public $gambar;
 
@@ -31,7 +31,7 @@ class ProfilPage extends Component
         $this->gambar = $user->img;
         $this->img = $user->img;
         $this->nama = $user->nama;
-        $this->email = $user->email;
+        $this->username = $user->username;
 
         if (auth()->user()->role == 'peserta') {
             $data_peserta = DataPeserta::where('peserta_id', $id)->first();
@@ -67,7 +67,7 @@ class ProfilPage extends Component
         $user->update([
             'img' => $img,
             'nama' => $this->nama,
-            'email' => $this->email,
+            'username' => $this->username,
         ]);
 
         $data_peserta->update([
@@ -99,7 +99,7 @@ class ProfilPage extends Component
         $user->update([
             'img' => $img,
             'nama' => $this->nama,
-            'email' => $this->email,
+            'username' => $this->username,
         ]);
 
         $data_pembimbing->update([
@@ -126,7 +126,7 @@ class ProfilPage extends Component
         $user->update([
             'img' => $img,
             'nama' => $this->nama,
-            'email' => $this->email,
+            'username' => $this->username,
         ]);
 
         $this->emit('success', ['pesan' => 'Berhasil perbarui']);

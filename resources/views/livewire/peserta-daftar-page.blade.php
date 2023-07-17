@@ -23,9 +23,9 @@
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input wire:model='email' required type="email" class="form-control"
+                                <input wire:model='username' required type="text" class="form-control"
                                     id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
+                                <label for="floatingInput">username address</label>
                             </div>
                             <div class="form-floating mb-4">
                                 <input wire:model='password' required type="password" class="form-control"
@@ -88,12 +88,12 @@
                             <div class="form-floating mb-3">
                                 <select wire:model='posisi_id' required class="form-control" id="floatingTextJk"
                                     id="">
-                                    <option value="">Pilih pendekatan kerja</option>
+                                    <option value="">Pilih penempatan kerja</option>
                                     @foreach ($posisis as $posisi)
                                     <option value="{{ $posisi->id }}" class="text-dark">{{ $posisi->nama }}</option>
                                     @endforeach
                                 </select>
-                                <label for="floatingTextJk">Pilih pendekatan kerja</label>
+                                <label for="floatingTextJk">Pilih penempatan kerja</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <select wire:model='bagian_id' required class="form-control" id="floatingTextJk"
