@@ -36,6 +36,11 @@ class DataAdminPage extends Component
 
     public function buat()
     {
+        $cek = User::where('username', $this->username)->first();
+        if ($cek) {
+            $this->emit('error', ['pesan' => 'Username sudah ada']);
+            return;
+        }
         if ($this->img) {
             $image = $this->img->store('img');
         }else{
