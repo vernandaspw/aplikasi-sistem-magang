@@ -332,6 +332,7 @@
         @endif
     </div>
 
+    {{-- print disini --}}
     <div class="d-print-block d-none">
         <div class="container-fluid mt-2">
             <div class="kop d-flex align-items-center">
