@@ -43,9 +43,9 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">username</label>
                                 <div class="col-sm-10">
-                                    <input type="email" maxlength="40" wire:model='email' class="form-control"
+                                    <input type="text" maxlength="40" wire:model='username' class="form-control"
                                         id="inputEmail3">
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
                                         <th scope="col">Img</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">NIP</th>
-                                        <th scope="col">Email</th>
+                                        <th scope="col">Username</th>
                                         <th scope="col">Phone</th>
                                         <th scope="col">Jenis kelamin</th>
                                         <th scope="col">Alamat</th>
@@ -125,7 +125,7 @@
                                             </td>
                                             <td>{{ $pembimbing->nama }}</td>
                                             <td>{{ $pembimbing->data_pembimbing->nip != null ? $pembimbing->data_pembimbing->nip : '-' }}</td>
-                                            <td>{{ $pembimbing->email }}</td>
+                                            <td>{{ $pembimbing->username }}</td>
                                             <td>{{ $pembimbing->data_pembimbing->no_hp != null ? $pembimbing->data_pembimbing->no_hp : '-' }}
                                             </td>
                                             <td>{{ $pembimbing->data_pembimbing->jk == 'l' ? 'laki laki' : 'prempuan' }}

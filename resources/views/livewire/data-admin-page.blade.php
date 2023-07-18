@@ -20,9 +20,9 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">username</label>
                             <div class="col-sm-10">
-                                <input type="email" maxlength="40" wire:model='email' class="form-control"
+                                <input type="text" maxlength="40" wire:model='username' class="form-control"
                                     id="inputEmail3">
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Img</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">username</th>
 
                                     <th scope="col">Status</th>
                                 </tr>
@@ -71,8 +71,8 @@
                                             @endif
                                         </td>
                                         <td>{{ $admin->nama }}</td>
-                                        <td>{{ $admin->email }}</td>
-                                    
+                                        <td>{{ $admin->username }}</td>
+
                                         <td>
                                            @if($admin->isaktif)
                                            <button class="btn btn-success"
